@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d8f1f5"
+    >
+
+    <EditText
+        android:id="@+id/login_account"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="手机号/邮箱/用户名"
+        android:layout_marginTop="110sp"
+        android:inputType="textEmailAddress"
+        />
+
+    <requestFocus />
+
+    <EditText
+        android:id="@+id/login_secret"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_account"
+        android:layout_marginTop="30sp"
+        android:inputType="textPassword"
+        />
+
+    <requestFocus />
+
+    <Button
+        android:id="@+id/login_submit"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_secret"
+        android:text="登录"
+        android:textColor="#3c407c"
+        android:background="#857cea"
+        android:textSize="15sp"
+        android:layout_marginTop="30sp"
+        android:layout_alignLeft="@id/login_secret"/>
+
+    <Button
+        android:id="@+id/login_register"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_secret"
+        android:text="注册"
+        android:textColor="#3c407c"
+        android:background="#857cea"
+        android:textSize="15sp"
+        android:layout_marginTop="30sp"
+        android:layout_alignRight="@id/login_secret"/>
+
+
+</RelativeLayout>
