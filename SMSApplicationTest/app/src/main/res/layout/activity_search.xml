@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.activity.login.MainActivity">
+
+
+    <EditText
+        android:id="@+id/id_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20sp"
+        android:hint="请输入查询id" />
+
+    <Button
+        android:id="@+id/search_commit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_get"
+        android:text="确认" />
+
+    <Button
+        android:id="@+id/close_database_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_get"
+        android:layout_alignLeft="@+id/id_get"
+        android:text="关闭数据库" />
+
+    <TextView
+        android:id="@+id/hint_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_commit"
+        android:layout_centerHorizontal="true"
+        android:text="查询测试界面！" />
+</RelativeLayout>

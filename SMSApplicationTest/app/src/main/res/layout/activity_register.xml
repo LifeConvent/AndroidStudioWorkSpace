@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/logo"
+        android:id="@+id/logo_first"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/login_input_phone_et"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/qq_edit_login"
+        android:ems="10"
+        android:layout_below="@+id/logo_first"
+        android:hint="请输入手机号"
+        android:inputType="phone" />
+
+    <requestFocus />
+
+    <EditText
+        android:id="@+id/login_input_code_et"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/login_input_phone_et"
+        android:layout_below="@+id/login_input_phone_et"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/qq_edit_login"
+        android:hint="请输入验证码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/login_request_code_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/login_input_phone_et"
+        android:layout_alignTop="@+id/login_input_code_et"
+        android:background="@drawable/shape"
+        android:text="获取验证码" />
+
+    <Button
+        android:id="@+id/login_commit_btn"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/login_input_code_et"
+        android:layout_below="@+id/login_input_code_et"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/shape"
+        android:text="注册"
+        android:textColor="#3c407c" />
+
+    <Button
+        android:id="@+id/temp_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="注册跳转"/>
+</RelativeLayout>

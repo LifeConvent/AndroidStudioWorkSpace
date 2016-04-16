@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/background">
+
+    <ImageView
+        android:id="@+id/logo_first"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40sp"
+        android:background="@mipmap/logo" />
+
+    <EditText
+        android:id="@+id/login_account_register"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_first"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/qq_edit_login"
+        android:hint="手机号/邮箱/账号"
+        android:inputType="textEmailAddress" />
+
+    <requestFocus />
+
+    <EditText
+        android:id="@+id/login_secret_register"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_account_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/qq_edit_login"
+        android:hint="请输入密码"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/login_secret_register_2"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_secret_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/qq_edit_login"
+        android:hint="再次确认密码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/registerin_request_btn"
+        android:layout_below="@id/login_secret_register_2"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/login_secret_register_2"
+        android:layout_marginTop="24sp"
+        android:background="@drawable/shape"
+        android:text="注册" />
+</RelativeLayout>

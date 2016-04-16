@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">培课</string>
+    <drawable name="clr_normal">#b18badde</drawable>
+    <drawable name="clr_pressed">#bab5b1</drawable>
+</resources>
