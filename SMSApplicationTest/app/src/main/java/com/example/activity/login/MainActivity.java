@@ -11,6 +11,6 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        welcome = (TextView) findViewById(R.id.welcome);
+        welcome = (TextView) findViewById(R.id.first_course_TV);
     }
 }

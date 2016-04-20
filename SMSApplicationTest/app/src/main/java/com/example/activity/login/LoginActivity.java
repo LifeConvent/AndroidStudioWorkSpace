@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.database.ob.User;
 import com.database.tool.DBAdapter_User;
 import com.example.activity.courseList.CourseListActivity;
+import com.example.activity.menu.MenuActivity;
 import com.example.activity.search.SearchActivity;
 import com.test.TestAndroidActivity;
 
@@ -28,9 +29,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     private Button registerBtn;
 
-    private Button searchBtn;
-
-    private Button testListBtn;
+//    private Button searchBtn;
+//
+//    private Button testListBtn;
 
     private DBAdapter_User database;
 
@@ -64,7 +65,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 }
                 if (password.equals(user.PASSWORD)) {
                     Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
-                    intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent = new Intent(LoginActivity.this, MenuActivity.class);
+                    intent.putExtra("name",account);
                     startActivity(intent);
                     finish();
                     break;
@@ -76,21 +78,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 break;
-//                if ((account != null && password != null && (judgeAccount(account) && judgePass(password)))||account.equals("admin")) {
-//                    database.init(account, password);
-//                    intent = new Intent(LoginActivity.this, RegisterActivity.class);
-//                    startActivity(intent);
-//                } else
-//                    Toast.makeText(getApplicationContext(), "用户名密码不能为空！", Toast.LENGTH_SHORT).show();
+//            case R.id.button_search:
+//                intent = new Intent(LoginActivity.this, CourseListActivity.class);
+//                startActivity(intent);
 //                break;
-            case R.id.button_search:
-                intent = new Intent(LoginActivity.this, CourseListActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.test_list_view:
-                intent = new Intent(LoginActivity.this, TestAndroidActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.test_list_view:
+//                intent = new Intent(LoginActivity.this, TestAndroidActivity.class);
+//                startActivity(intent);
+//                break;
         }
     }
 
@@ -150,11 +145,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         inputaccountsecret = (EditText) findViewById(R.id.login_secret);
         logincommitBtn = (Button) findViewById(R.id.login_submit);
         registerBtn = (Button) findViewById(R.id.login_register);
-        searchBtn = (Button) findViewById(R.id.button_search);
-        testListBtn = (Button) findViewById(R.id.test_list_view);
-        //对Button设置监听事件
-        testListBtn.setOnClickListener(this);
-        searchBtn.setOnClickListener(this);
+//        searchBtn = (Button) findViewById(R.id.button_search);
+//        testListBtn = (Button) findViewById(R.id.test_list_view);
+//        //对Button设置监听事件
+//        testListBtn.setOnClickListener(this);
+//        searchBtn.setOnClickListener(this);
         logincommitBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
     }

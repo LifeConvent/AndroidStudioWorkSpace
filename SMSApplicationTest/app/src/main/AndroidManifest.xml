@@ -62,6 +62,35 @@
             android:screenOrientation="portrait" >
         </activity>
 
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.menu.MenuActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.menu.MyCourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.menu.MyInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.menu.RePassActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.courseList.MyCourseDetailActivity">
+        </activity>
+
         <!-- 测试界面 -->
         <activity
             android:name="com.test.TestAndroidActivity"

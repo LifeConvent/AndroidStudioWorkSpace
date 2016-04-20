@@ -55,8 +55,8 @@ public class DBAdapter_User {
             db.execSQL(DB_CREATE);
             //         db.execSQL(DB_INSERT);
             ContentValues newValues = new ContentValues();
-            newValues.put(USER_NAME, "1");
-            newValues.put(USER_PASSWORD, "1");
+            newValues.put(USER_NAME, "admin");
+            newValues.put(USER_PASSWORD, "admin");
             //将数据插入表中，无替换数据
             db.insert(DB_TABLE, null, newValues);
         }
@@ -117,11 +117,17 @@ public class DBAdapter_User {
         return user;
     }
 
-
     public User getOneData(String name) {
         Cursor results = db.query(DB_TABLE, new String[]{TABLE_ID, USER_NAME, USER_PASSWORD},
-                USER_NAME + "=" + "'"+name+"'", null, null, null, null);
+                USER_NAME + "=" + "'" + name + "'", null, null, null, null);
         return ConvertToPeople(results);
+    }
+
+    public int updateUser(User user) {
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(USER_NAME,user.getAccountName());
+        updateValues.put(USER_PASSWORD, user.getAccountPassword());
+        return db.update(DB_TABLE, updateValues, USER_NAME + "=" + "'" + user.getAccountName() + "'", null);
     }
 
     private User ConvertToPeople(Cursor cursor) {
@@ -138,6 +144,8 @@ public class DBAdapter_User {
         }
         return user;
     }
+
+
 
     public String getAccountPassword() {
         return PASSWORD;

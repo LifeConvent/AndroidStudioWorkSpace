@@ -20,6 +20,9 @@ public class RegisterAccountActivity extends Activity implements View.OnClickLis
 
     private String account;
 
+    /**手机号注册后手机号的保留问题*/
+    private String phone;
+
     public EditText inputaccountEt;
 
     private EditText inputaccountsecret;
@@ -41,7 +44,9 @@ public class RegisterAccountActivity extends Activity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        String account = inputaccountEt.getText().toString();
+        Intent intent = getIntent();
+        phone = intent.getStringExtra("phone");
+        account = inputaccountEt.getText().toString();
         String password = inputaccountsecret.getText().toString();
         String password2 = inputaccountsecret2.getText().toString();
         switch (v.getId()) {
@@ -50,11 +55,11 @@ public class RegisterAccountActivity extends Activity implements View.OnClickLis
                     Toast.makeText(getApplicationContext(), "用户名密码不能为空！", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                /**注册数据库出现问题*/
+
                 //Toast.makeText(getApplicationContext(), account, Toast.LENGTH_SHORT).show();//测试输出账号
                 User user = database.queryUser(account);
                 //Toast.makeText(getApplicationContext(),user.getAccountPassword(), Toast.LENGTH_SHORT).show();//测试输出取得的密码
-                Intent intent;
+                //Intent intent;
                 if (user!=null) {
                     Toast.makeText(getApplicationContext(), "用户名已存在！", Toast.LENGTH_SHORT).show();
                     break;
@@ -77,7 +82,7 @@ public class RegisterAccountActivity extends Activity implements View.OnClickLis
     }
 
     public boolean judgePass(String password) {
-        String matchPass = "[a-zA-Z][a-zA-Z0-9\\.,-_:;'\"/<>()!~`|]*";
+        String matchPass = "[a-zA-Z0-9\\.,-_:;'\"/<>()!~`|]*";
         if ((password.length() <= 16) && password.matches(matchPass)) {
             return true;
         } else {

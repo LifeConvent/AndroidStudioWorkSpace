@@ -25,20 +25,24 @@ public class CourseListActivity extends Activity implements View.OnClickListener
 
     private EditText searchCourseBtn;
     private ListView listView;
+    private String account;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        account = intent.getStringExtra("name");
         setContentView(R.layout.activity_course_list);
         searchCourseBtn = (EditText) findViewById(R.id.list_search_course);
         listView = (ListView) findViewById(R.id.list_course_LV);
         List<String> list = new ArrayList<String>();
         DBAdapter_Course database = new DBAdapter_Course(getApplicationContext());
         database.open();
-        //database.init();
         //id字段从1开始查询
         for (int i = 1; i < 100; i++) {
             Course course = database.querySingleCourse(i);
-            list.add("课程号:" + course.NO + "\n" + "课程名：" + course.NAME + "\n" + "讲课人:" + course.TEACHER);
+            list.add("\n"+"课程号:          " + course.NO + "\n\n" + "课程名：          " + course.NAME +
+                    "\n\n" + "讲课人:         " + course.TEACHER + "\n\n" + "耗时：          " +
+                    course.TAKE_TIME+"小时"+"\n");
 
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
@@ -46,9 +50,11 @@ public class CourseListActivity extends Activity implements View.OnClickListener
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                String msg = "位置：" + String.valueOf(arg2) + ",ID:" + String.valueOf(arg3);
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(CourseListActivity.this,CourseDetailActivity.class);
+//                String msg = "位置：" + String.valueOf(arg2) + ",ID:" + String.valueOf(arg3);
+//                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(CourseListActivity.this, CourseDetailActivity.class);
+                intent.putExtra("name",account);
+                intent.putExtra("id",String.valueOf(arg3));
                 startActivity(intent);
             }
         });
@@ -60,6 +66,7 @@ public class CourseListActivity extends Activity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.list_search_course:
                 Intent intent = new Intent(CourseListActivity.this, SearchActivity.class);
+                intent.putExtra("name",account);
                 startActivity(intent);
                 break;
         }

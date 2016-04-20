@@ -36,6 +36,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
 
     private Button testBtn;
 
+    private String phoneNums;
+
     int i = 30;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +71,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        String phoneNums = inputPhoneEt.getText().toString();
+        phoneNums = inputPhoneEt.getText().toString();
         switch (v.getId()) {
             case R.id.login_request_code_btn:
                 //通过规则判断手机号
@@ -134,6 +136,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
                                 Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this,
                                 RegisterAccountActivity.class);
+                        intent.putExtra("phone",phoneNums);
                         startActivity(intent);
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         Toast.makeText(getApplicationContext(), "验证码已经发送",
