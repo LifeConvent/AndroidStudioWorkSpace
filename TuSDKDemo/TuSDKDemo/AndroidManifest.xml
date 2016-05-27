@@ -30,7 +30,7 @@
     <uses-feature android:name="android.hardware.camera.flash" />
 
     <application
-        android:name="org.lasque.tusdkdemo.TuApplication"
+        android:name=".examples.suite.TuApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -38,7 +38,7 @@
         android:largeHeap="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name=".DemoEntryActivity"
+            android:name=".examples.suite.DemoEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

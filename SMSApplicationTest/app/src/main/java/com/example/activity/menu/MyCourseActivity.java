@@ -32,6 +32,7 @@ public class MyCourseActivity extends Activity implements View.OnClickListener {
     private DBAdapter_PersonCourse database_mycourse;
     //private DBAdapter_Course database_course;
 
+    public static MyCourseActivity myCourseActivity;
     private String account;
 
     private ListView mycourseList;
@@ -42,6 +43,7 @@ public class MyCourseActivity extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_course);
+        myCourseActivity = this;
         init();
         CourseAdapter adapter = new CourseAdapter(MyCourseActivity.this, R.layout.course_item, courseNumList);
         mycourseList.setAdapter(adapter);

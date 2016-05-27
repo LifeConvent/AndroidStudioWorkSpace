@@ -17,9 +17,6 @@ import org.lasque.tusdk.impl.components.camera.TuCameraFragment;
 import org.lasque.tusdk.impl.components.camera.TuCameraFragment.TuCameraFragmentDelegate;
 import org.lasque.tusdk.impl.components.camera.TuCameraOption;
 import org.lasque.tusdk.modules.components.TuSdkHelperComponent;
-import org.lasque.tusdkdemo.R;
-import org.lasque.tusdkdemo.SampleBase;
-import org.lasque.tusdkdemo.SampleGroup.GroupType;
 
 import android.app.Activity;
 
@@ -28,16 +25,15 @@ import android.app.Activity;
  * 
  * @author Clear
  */
-public class CameraComponentSample extends SampleBase implements TuCameraFragmentDelegate
+public class CameraComponentSample implements TuCameraFragmentDelegate
 {
+	public TuSdkHelperComponent componentHelper;
 	/** 相机组件范例 */
 	public CameraComponentSample()
 	{
-		super(GroupType.SuiteSample, R.string.sample_CameraComponent);
 	}
 
 	/** 显示范例 */
-	@Override
 	public void showSample(Activity activity)
 	{
 		if (activity == null) return;

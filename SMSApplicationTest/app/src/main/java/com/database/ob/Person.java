@@ -7,7 +7,7 @@ public class Person {
 
     private String name;
     private String sex;
-    private Long age;
+    private long age;
     private String department;
     private String position;
     //工号
@@ -28,7 +28,7 @@ public class Person {
     public static final String PERSON_PHONE = "PHONE";
     public static final String PERSON_EMAIL = "EMAIL";
 
-    public Person(String account, Long age, String department, String email, String initial, String phone, String name, String sex, String position) {
+    public Person(String account,  String name,String sex,  long age, String department, String position, String initial, String phone,String email) {
         this.account = account;
         this.age = age;
         this.department = department;
@@ -60,7 +60,7 @@ public class Person {
         this.account = account;
     }
 
-    public Long getAge() {
+    public long getAge() {
         return age;
     }
 

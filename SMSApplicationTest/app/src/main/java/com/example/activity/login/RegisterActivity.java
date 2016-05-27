@@ -56,7 +56,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         requestCodeBtn.setOnClickListener(this);
         commitBtn.setOnClickListener(this);
         //启动短信证书
-        SMSSDK.initSDK(this, "111496ea0363a", "3feb96bc4ae1a94f98771e07259c5b78");
+        SMSSDK.initSDK(getApplicationContext(), "11e81c952dbde", "c5ca2208bdf4c819b56aa820444cbb81");
         EventHandler eventHandler = new EventHandler() {
             public void afterEvent(int event, int result, Object data) {
                 Message msg = new Message();

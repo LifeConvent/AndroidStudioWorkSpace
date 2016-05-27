@@ -212,6 +212,20 @@ public class DBAdapter_Person {
         return person;
     }
 
+    public int updatePerson(Person person) {
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(PERSON_ACCOUNT,person.getAccount());
+        updateValues.put(PERSON_NAME,person.getName());
+        updateValues.put(PERSON_SEX,person.getSex());
+        updateValues.put(PERSON_AGE,person.getAge());
+        updateValues.put(PERSON_DEPARTMENT,person.getDepartment());
+        updateValues.put(PERSON_POSITION,person.getPosition());
+        updateValues.put(PERSON_INITIAL,person.getInitial());
+        updateValues.put(PERSON_PHONE,person.getPhone());
+        updateValues.put(PERSON_EMAIL,person.getEmail());
+        return db.update(DB_TABLE, updateValues, PERSON_ACCOUNT + "=" + "'" + person.getAccount() + "'", null);
+    }
+
     public void init(String account) {
         Person person = new Person();
         person.setAccount(account);

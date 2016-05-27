@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.database.ob.User;
 import com.database.tool.DBAdapter_User;
+import com.example.activity.Person.PersonModifyActivity;
 import com.example.activity.courseList.CourseListActivity;
 import com.example.activity.menu.MenuActivity;
 import com.example.activity.search.SearchActivity;
@@ -75,11 +76,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     break;
                 }
             case R.id.login_register:
-                intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                intent = new Intent(LoginActivity.this, RegisterAccountActivity.class);
                 startActivity(intent);
                 break;
 //            case R.id.button_search:
-//                intent = new Intent(LoginActivity.this, CourseListActivity.class);
+//                intent = new Intent(LoginActivity.this, PersonModifyActivity.class);
 //                startActivity(intent);
 //                break;
 //            case R.id.test_list_view:

@@ -14,6 +14,7 @@ import com.database.tool.DBAdapter_Course;
 import com.database.tool.DBAdapter_PersonCourse;
 import com.example.activity.login.R;
 import com.example.activity.menu.MenuActivity;
+import com.example.activity.menu.MyCourseActivity;
 
 /**
  * Created by 彪 on 2016/4/19.
@@ -39,13 +40,14 @@ public class MyCourseDetailActivity extends Activity implements View.OnClickList
                 database_mycourse.deleteOneData(numCourse);
                 Toast.makeText(getApplicationContext(),"取消成功！",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, MenuActivity.class);
-                intent.putExtra("name",account);
+                intent.putExtra("name", account);
                 startActivity(intent);
                 /**
                  *
                  * 再次关闭取消之前打开的我的课程界面，防止重复
                  *
                  * */
+                MyCourseActivity.myCourseActivity.finish();
                 finish();
                 break;
         }

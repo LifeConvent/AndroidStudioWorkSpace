@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/modify_personal_info"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="#cccaca"
+            android:gravity="center"
+            android:text="个人信息修改"
+            android:textColor="#e9f4f3"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/account"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_below="@+id/modify_personal_info"
+            android:gravity="center"
+            android:text="账号"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="姓名：" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="性别：" />
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="年龄："
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="部门：" />
+
+        <EditText
+            android:id="@+id/et5"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="职位：" />
+
+        <EditText
+            android:id="@+id/et6"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="工号：" />
+
+        <EditText
+            android:id="@+id/et7"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="电话："
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/et8"
+            android:layout_width="280sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="邮箱：" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/et8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/shape"
+            android:text="确认修改" />
+
+    </RelativeLayout>
+
+</ScrollView>

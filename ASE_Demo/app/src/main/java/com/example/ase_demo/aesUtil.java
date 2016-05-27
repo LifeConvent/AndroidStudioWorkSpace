@@ -63,13 +63,6 @@ public class aesUtil {
 
     }
 
-    //
-    //
-    //在HashMao中按密码查找rawkey密钥数组------失败
-    //
-    //
-    //
-    //
     public static byte[] getRawkey(String seed) throws Exception{
 //        Iterator it = hashMap.keySet().iterator();
 //        while (it.hasNext()) {
