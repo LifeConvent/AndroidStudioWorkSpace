@@ -11,17 +11,29 @@
         android:layout_below="@id/list_search_course"
         android:background="#cccaca"
         android:gravity="center"
-        android:text="培课"
+        android:text="我的个人信息"
         android:textColor="#e9f4f3"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/myInfo_show"
+    <ListView
+        android:layout_below="@+id/head_personal_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/head_personal_info"
-        android:text="个人信息"
-        android:textSize="40sp" />
+        android:id="@+id/my_info_list"
+        android:background="#f5f5f5"
+        android:divider="#8dc7f4"
+        android:dividerHeight="0px">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/re_button"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="修改个人信息"
+        android:background="@drawable/shape"/>
 
 </RelativeLayout>

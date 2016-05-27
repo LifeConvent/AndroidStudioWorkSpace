@@ -52,6 +52,12 @@
 
         <!-- 注册界面 -->
         <activity
+            android:name="com.example.activity.menu.TeacherManegerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
             android:name="com.example.activity.login.RegisterAccountActivity"
             android:screenOrientation="portrait" >
         </activity>
@@ -59,6 +65,12 @@
         <!-- 注册界面 -->
         <activity
             android:name="com.example.activity.courseList.CourseDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.courseList.TestActivity"
             android:screenOrientation="portrait" >
         </activity>
 
@@ -89,6 +101,11 @@
         <!-- 注册界面 -->
         <activity
             android:name="com.example.activity.courseList.MyCourseDetailActivity">
+        </activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.example.activity.Person.PersonModifyActivity">
         </activity>
 
         <!-- 测试界面 -->

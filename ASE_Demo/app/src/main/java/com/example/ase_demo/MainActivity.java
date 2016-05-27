@@ -37,20 +37,20 @@ public class MainActivity extends AppCompatActivity {
         textView_decrypt = (TextView) findViewById(R.id.textView_decrypt);
 
 
-//        encrypt = aesUtil.encrypt(password, text);
-//        decrypt = aesUtil.decrypt(password, encrypt);
+        encrypt = aesUtil.encrypt(password, text);
+        decrypt = aesUtil.decrypt(password, encrypt);
 
 //------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------//
 
 
-        // 加密
-        try {
-            AesUtil2.startEncrypt(password,text);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        // 加密
+//        try {
+//            AesUtil2.startEncrypt(password,text);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 //------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------//

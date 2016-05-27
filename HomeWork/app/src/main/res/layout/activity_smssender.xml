@@ -1,0 +1,59 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SMSSenderActivity" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+
+     <TextView
+         android:id="@+id/widget27"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="收件人"
+         android:textSize="16sp"
+         android:textColor="#c0c0c0"
+         android:layout_marginLeft="5.0dip" 
+         android:layout_marginTop="8.0dip" 
+         android:layout_marginRight="5.0dip" 
+         android:layout_marginBottom="8.0dip"/>
+
+  	<EditText
+  	    android:id="@+id/myEditText1"
+  	    android:layout_width="fill_parent"
+  	    android:layout_height="wrap_content"
+  	    android:layout_toRightOf="@+id/widget27"
+        android:background="@drawable/note_comment_input"
+        android:paddingLeft="12.0dip"
+        android:paddingTop="0.0dip"
+        android:paddingRight="12.0dip"
+        android:paddingBottom="0.0dip"
+  	    android:text=""
+  	    android:textSize="18sp"
+  	    android:layout_x="60px"
+  	    android:layout_y="2px"  />
+  
+  	<EditText
+  	    android:id="@+id/myEditText2"
+  	    android:layout_width="fill_parent"
+    	android:layout_height="223px"
+    	android:layout_below="@+id/widget27"
+        android:background="@drawable/note_comment_input"
+        android:paddingLeft="12.0dip"
+        android:paddingTop="0.0dip"
+        android:paddingRight="12.0dip"
+        android:paddingBottom="0.0dip"
+    	android:text=""
+    	android:textSize="18sp"
+    	android:layout_x="0px"
+    	android:layout_y="52px"  />
+
+  	<Button
+  	    android:id="@+id/myButton1"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_below="@+id/myEditText2"
+    	android:layout_centerHorizontal="true"
+  	    android:text="按我发送短信"/>
+
+
+</RelativeLayout>

@@ -6,6 +6,7 @@ import com.database.tool.DBAdapter_Course;
 import com.database.tool.DBAdapter_PersonCourse;
 import com.example.activity.courseList.CourseDetailActivity;
 import com.example.activity.courseList.CourseListActivity;
+import com.example.activity.courseList.TestActivity;
 import com.example.activity.login.LoginActivity;
 import com.example.activity.login.MainActivity;
 import com.example.activity.login.R;
@@ -77,10 +78,13 @@ public class MenuActivity extends Activity implements View.OnClickListener {
                         break;
                     case 4:
                         intent = new Intent(MenuActivity.this, RePassActivity.class);
-                        intent.putExtra("name",account);
+                        intent.putExtra("name", account);
                         startActivity(intent);
                         break;
                     case 5:
+
+                        break;
+                    case 6:
                         intent = new Intent(MenuActivity.this, LoginActivity.class);
                         intent.putExtra("name", account);
                         startActivity(intent);
@@ -92,21 +96,41 @@ public class MenuActivity extends Activity implements View.OnClickListener {
     }
 
     private void initMenu() {
-        accountInfo = (TextView) findViewById(R.id.account_name);
-        Menu myCourse = new Menu("我的课程", R.mipmap.mycourse);
-        menuList.add(myCourse);
-        Menu courseSearch = new Menu("课程查询", R.mipmap.coursesearch);
-        menuList.add(courseSearch);
-        Menu myInfo = new Menu("个人信息", R.mipmap.personalinfo);
-        menuList.add(myInfo);
-        Menu rePass = new Menu("修改密码", R.mipmap.resetpassword);
-        menuList.add(rePass);
-        Menu reLog = new Menu("注销登陆", R.mipmap.resetlogin);
-        menuList.add(reLog);
-        database_myCourse = new DBAdapter_PersonCourse(getBaseContext());
+        if (account.equals("admin")) {
+            accountInfo = (TextView) findViewById(R.id.account_name);
+            Menu myCourse = new Menu("我的课程", R.mipmap.mycourse);
+            menuList.add(myCourse);
+            Menu courseSearch = new Menu("课程查询", R.mipmap.coursesearch);
+            menuList.add(courseSearch);
+            Menu myInfo = new Menu("个人信息", R.mipmap.personalinfo);
+            menuList.add(myInfo);
+            Menu rePass = new Menu("修改密码", R.mipmap.resetpassword);
+            menuList.add(rePass);
+            Menu teacherInfo = new Menu("管理教师", R.mipmap.personalinfo);
+            menuList.add(teacherInfo);
+            Menu reLog = new Menu("注销登陆", R.mipmap.resetlogin);
+            menuList.add(reLog);
+            database_myCourse = new DBAdapter_PersonCourse(getBaseContext());
 //        //每次重新启动之前删除所有数据
 //        database_myCourse.deleteAllData();
-        database_myCourse.open(account);
+            database_myCourse.open(account);
+        }else{
+            accountInfo = (TextView) findViewById(R.id.account_name);
+            Menu myCourse = new Menu("我的课程", R.mipmap.mycourse);
+            menuList.add(myCourse);
+            Menu courseSearch = new Menu("课程查询", R.mipmap.coursesearch);
+            menuList.add(courseSearch);
+            Menu myInfo = new Menu("个人信息", R.mipmap.personalinfo);
+            menuList.add(myInfo);
+            Menu rePass = new Menu("修改密码", R.mipmap.resetpassword);
+            menuList.add(rePass);
+            Menu reLog = new Menu("注销登陆", R.mipmap.resetlogin);
+            menuList.add(reLog);
+            database_myCourse = new DBAdapter_PersonCourse(getBaseContext());
+//        //每次重新启动之前删除所有数据
+//        database_myCourse.deleteAllData();
+            database_myCourse.open(account);
+        }
 
         //以何身份打开数据库
         //Toast.makeText(getApplicationContext(),"Menu打开数据库"+account,Toast.LENGTH_SHORT).show();

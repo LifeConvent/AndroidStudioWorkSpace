@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/libs/commons-httpclient-3.1.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/ex/idcardcheck/ACameraActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/ex/idcardcheck/CameraManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/ex/idcardcheck/utils" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/ex/idcardcheck/views/ScreenSetting.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bcr_camera_shutter.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bcr_camera_shutter_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bcr_camera_shutter_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/ocr_camera.xml" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
