@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear0"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60sp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_below="@+id/linear0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:id="@+id/username_et"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:hint="手机号/邮箱"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+            android:maxLength="20"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/edit_style_login"
+            android:inputType="textEmailAddress"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:id="@+id/password_et"
+            android:layout_width="300sp"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+            android:maxLength="20"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:background="@drawable/edit_style_login"
+            android:inputType="textPassword"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+        <Button
+            android:id="@+id/submit_bn"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:textColor="#3c407c"
+            android:background="@drawable/shape"
+            android:textSize="15sp"/>
+
+        <Space
+            android:layout_width="30sp"
+            android:layout_height="0sp"/>
+
+        <Button
+            android:id="@+id/register_bn"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textColor="#3c407c"
+            android:background="@drawable/shape"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

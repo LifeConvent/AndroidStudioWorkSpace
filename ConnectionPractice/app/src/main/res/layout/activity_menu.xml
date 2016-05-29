@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/menu_first"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:text="个人中心"
+        android:textSize="25sp"
+        android:textColor="#e9f4f3"
+        android:background="#cccaca"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_marginLeft="10sp"
+        android:id="@+id/menu_two"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_below="@id/menu_first"
+        android:background="@drawable/mypicture"/>
+
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginLeft="180sp"
+        android:layout_marginTop="37sp"
+        android:layout_below="@id/menu_first"
+        android:text="账户名称"/>
+
+    <ListView
+        android:layout_below="@id/menu_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_listView"
+        android:divider="#8dc7f4"
+        android:dividerHeight="2px"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

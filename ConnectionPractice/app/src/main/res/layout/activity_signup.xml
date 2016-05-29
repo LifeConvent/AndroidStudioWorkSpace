@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear0"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60sp">
+
+        <ImageView
+            android:id="@+id/logo_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_below="@+id/linear0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:id="@+id/singup_username_et"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_style_login"
+            android:hint="手机号/邮箱/账号"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+            android:maxLength="20"
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:id="@+id/password1_et"
+            android:inputType="textPassword"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_style_login"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+            android:maxLength="20"
+            android:hint="请输入密码"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:id="@+id/password2_et"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_style_login"
+            android:hint="再次确认密码"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+            android:maxLength="20"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp">
+        <Button
+            android:id="@+id/signup_register_bn"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:text="确认注册" />
+    </LinearLayout>
+
+</RelativeLayout>
