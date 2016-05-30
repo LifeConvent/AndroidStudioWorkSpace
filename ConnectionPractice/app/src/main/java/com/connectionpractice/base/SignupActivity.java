@@ -1,13 +1,11 @@
 package com.connectionpractice.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.connectionpractice.R;
 import com.connectionpractice.api.ApiStatus;
@@ -27,7 +25,7 @@ import java.util.regex.Pattern;
 /**
  * Created by 彪 on 2016/5/28.
  */
-public class Signup extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
+public class SignupActivity extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
 
     private EditText mEtaccount;
     private EditText mEtpassword1;
@@ -101,7 +99,7 @@ public class Signup extends BaseActivity implements View.OnClickListener, BaseAp
                         }
                         password = mEtpassword2.getText().toString();
                         password = Md5Tool.getMD5(password);
-                        SU001ApiTask myTask = new SU001ApiTask(Signup.this, BasicConfig.API_ID_SU001);
+                        SU001ApiTask myTask = new SU001ApiTask(SignupActivity.this, BasicConfig.API_ID_SU001);
                         List<NameValuePair> nameValuePair = myTask.getNameValuePair();
                         nameValuePair.add(new BasicNameValuePair("name", account));
                         nameValuePair.add(new BasicNameValuePair("pass", password));
@@ -119,7 +117,7 @@ public class Signup extends BaseActivity implements View.OnClickListener, BaseAp
             case BasicConfig.API_ID_SU001:
                 if ((response.optString("result").equals("success"))) {
                     getLoadingDialog().dismiss();
-                    Intent intent = new Intent(Signup.this, Login.class);
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                     return;

@@ -30,13 +30,14 @@ public class BaseActivity extends Activity {
         String err = getResources().getString(id);
         showMessageByString(v, err);
     }
+
     public void showMessageByString(View v, String err) {
         Toast.makeText(getApplicationContext(), err,
                 Toast.LENGTH_SHORT).show();
     }
 
     public void showReturnServer(String message) {
-        switch (message){
+        switch (message) {
             case "ACCOUNT_NOT_EXIST":
                 showMessageByResourceId(null, R.string.server_err_not_exist);
                 getLoadingDialog().dismiss();
@@ -45,16 +46,20 @@ public class BaseActivity extends Activity {
                 showMessageByResourceId(null, R.string.server_err_wrong_password);
                 getLoadingDialog().dismiss();
                 break;
-            case  "INPUT_NULL":
+            case "INPUT_NULL":
                 showMessageByResourceId(null, R.string.server_err_nul);
                 getLoadingDialog().dismiss();
                 break;
-            case  "INSERT_FAILED":
+            case "INSERT_FAILED":
                 showMessageByResourceId(null, R.string.server_err_insert_failed);
                 getLoadingDialog().dismiss();
                 break;
             case "ACCOUNT_EXIST":
                 showMessageByResourceId(null, R.string.server_err_exist);
+                getLoadingDialog().dismiss();
+                break;
+            case "OLD_PASS_WRONG":
+                showMessageByResourceId(null, R.string.server_err_old_wrong);
                 getLoadingDialog().dismiss();
                 break;
         }

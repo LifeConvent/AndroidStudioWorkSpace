@@ -1,13 +1,10 @@
 package com.connectionpractice.base;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.connectionpractice.R;
 import com.connectionpractice.api.ApiStatus;
@@ -15,6 +12,7 @@ import com.connectionpractice.api.BaseApiTask;
 import com.connectionpractice.api.SI001ApiTask;
 import com.connectionpractice.config.BasicConfig;
 import com.connectionpractice.tool.Md5Tool;
+import com.connectionpractice.tool.UserInfo;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -25,12 +23,15 @@ import java.util.List;
 /**
  * Created by 彪 on 2016/5/28.
  */
-public class Login extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
+public class LoginActivity extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
 
     private EditText mEtAccount;
     private EditText mEtPassword;
     private Button mBnLogin;
     private Button mBnRgesiter;
+
+    private String account;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class Login extends BaseActivity implements View.OnClickListener, BaseApi
                 String account = mEtAccount.getText().toString();
                 String password = mEtPassword.getText().toString();
                 password = Md5Tool.getMD5(password);
-                SI001ApiTask myTask = new SI001ApiTask(Login.this, BasicConfig.API_ID_SI001);
+                SI001ApiTask myTask = new SI001ApiTask(LoginActivity.this, BasicConfig.API_ID_SI001);
 
                 //List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
                 List<NameValuePair> nameValuePair = myTask.getNameValuePair();
@@ -65,7 +66,7 @@ public class Login extends BaseActivity implements View.OnClickListener, BaseApi
                 getLoadingDialog().show();
                 break;
             case R.id.register_bn:
-                Intent intent = new Intent(Login.this,Signup.class);
+                Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -82,9 +83,11 @@ public class Login extends BaseActivity implements View.OnClickListener, BaseApi
             case BasicConfig.API_ID_SI001: {
                 if (response.optString("result").equals("error")) {
                     showReturnServer(response.optString("message"));
-
                 }else {
-                    Intent intent = new Intent(Login.this,MenuActivity.class);
+                    account = response.optString("name");
+                    password = response.optString("pass");
+                    saveUserInfo(response);
+                    Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);
                 }
                 break;
@@ -92,5 +95,10 @@ public class Login extends BaseActivity implements View.OnClickListener, BaseApi
             default:
                 break;
         }
+    }
+
+    private void saveUserInfo(JSONObject ob) {
+        UserInfo.getInstance().setmStrUserName(account);
+        UserInfo.getInstance().setmStrUserPassword(password);
     }
 }
