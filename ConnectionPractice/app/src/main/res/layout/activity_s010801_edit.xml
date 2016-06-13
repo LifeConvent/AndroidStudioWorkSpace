@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    tools:context=".S010801_New">
+
+    <LinearLayout
+        android:id="@+id/s010801_in_linear0"
+        android:layout_width="fill_parent"
+        android:layout_height="40sp"
+        android:background="#5A9ABD"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/s010801_in_ed_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:background="@drawable/s010801_in_ed_newback" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/s010801_ed_head_title_back"
+                    android:textColor="#FFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/s010801_ed_head_title"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s010801_in_linear0"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_heagimage" />
+
+                <Button
+                    android:id="@+id/s010801_in_ed_bt_changeimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_edit_bs_headimage"
+                    android:text="@string/s010801_ed_head_changeheadimage"
+                    android:textColor="#FFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear0"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_name" />
+
+                <EditText
+                    android:id="@+id/s010801_in_ed_et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_ed_newetselect"
+                    android:hint="@string/s010801_ed_head_inputname"
+                    android:paddingLeft="10sp"
+                    android:textColorHint="#b9b3b3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear1"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_sex" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp">
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_men"
+                        android:layout_width="50sp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/s010801_in_edit_sex_newbuttonstyle"
+                        android:textColor="#989898"
+                        android:textStyle="bold"
+                        android:text="男" />
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_female"
+                        android:layout_width="50sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#989898"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/s010801_in_edit_sex_newbuttonstyle"
+                        android:text="女" />
+                </LinearLayout>
+                <!--<RadioGroup-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/rp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:orientation="horizontal" >-->
+                <!--<RadioButton-->
+                <!--android:id="@+id/male"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="男"-->
+                <!--android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"-->
+                <!--android:checked="true">-->
+                <!--</RadioButton>-->
+                <!--<RadioButton-->
+                <!--android:id="@+id/female"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"-->
+                <!--android:text="女" >-->
+                <!--</RadioButton>-->
+                <!--</RadioGroup>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear2"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_birthday" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="年"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="月"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear3"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_city" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_province"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="省"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="市"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_town"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="区"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear4"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_phone" />
+
+                <EditText
+                    android:id="@+id/s010801_in_ed_et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_ed_newetselect"
+                    android:hint="@string/s010801_ed_head_inputphone"
+                    android:paddingLeft="10sp"
+                    android:textColorHint="#b9b3b3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear5"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_definite_time" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_definite_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="年"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/s010801_in_ed_bt_definite_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                        android:drawableRight="@drawable/s010801_in_ed_newselect"
+                        android:text="月"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear6"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_disease" />
+
+                <EditText
+                    android:id="@+id/s010801_in_ed_et_disease"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_ed_newetselect"
+                    android:hint="@string/s010801_ed_head_inputdisease"
+                    android:paddingLeft="10sp"
+                    android:textColorHint="#b9b3b3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear7"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s010801_ed_head_type" />
+
+                <!--<com.beardedhen.androidbootstrap.BootstrapDropDown-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="3"-->
+
+                    <!--app:bootstrapText="XSmall {fa_thumbs_o_up}"-->
+                    <!--app:roundedCorners="true"-->
+                    <!--app:bootstrapSize="md"-->
+                    <!--app:bootstrapBrand="success"-->
+                    <!--app:bootstrapExpandDirection="down"-->
+                    <!--/>-->
+
+                <EditText
+                    android:id="@+id/s010801_in_ed_et_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_ed_newetselect"
+                    android:hint="@string/s010801_ed_head_inputdisease"
+                    android:paddingLeft="10sp"
+                    android:textColorHint="#b9b3b3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear9"
+                android:layout_marginTop="30sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/s010801_ed_new_linear8"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#000000">
+
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_ed_new_linear10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_ed_new_linear9"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/s010801_in_ed_bt_commit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:background="@drawable/s010801_in_edit_submit_newbuttonstyle"
+                    android:drawableLeft="@drawable/s010801_in_ed_newsubmitbuttonimage"
+                    android:text="提交"
+                    android:textColor="#FFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
