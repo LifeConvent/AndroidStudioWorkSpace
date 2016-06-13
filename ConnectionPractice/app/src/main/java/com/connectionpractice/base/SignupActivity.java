@@ -119,6 +119,10 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
                     getLoadingDialog().dismiss();
                     Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                    );
                     finish();
                     return;
                 } else {

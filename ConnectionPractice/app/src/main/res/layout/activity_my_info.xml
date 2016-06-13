@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    tools:context=".S010801_New">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:focusable="true">
+
+        <include layout="@layout/tab" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/s010801_in_linear0"
+        android:layout_width="fill_parent"
+        android:layout_height="40sp"
+        android:background="#5A9ABD"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/s010801_in_head_title"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s010801_in_linear0"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/s010801_in_my_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:id="@+id/s010801_newmyheadiamge"
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:background="@drawable/s010801_in_newdefaultimage" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100sp"
+                        android:layout_marginTop="10sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/s010801_in_tv_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/s010801_in_head_account"
+                            android:textColor="#1d8fd6"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6sp"
+                                android:text="联系电话："
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/s010801_in_tv_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10sp"
+                                android:layout_marginTop="6sp"
+                                android:text="13000010001"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6sp"
+                                android:text="电子邮箱："
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/s010801_in_tv_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10sp"
+                                android:layout_marginTop="6sp"
+                                android:text="1234@nnit.com"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35sp"
+                            android:layout_height="35sp"
+                            android:background="@drawable/s010801_in_newrightnext"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_in_linear1"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/s010801_in_sys_inform"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:background="@drawable/s010801_in_newsysinform" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50sp"
+                        android:layout_marginTop="5sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="系统通知"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35sp"
+                            android:layout_height="35sp"
+                            android:background="@drawable/s010801_in_newrightnext"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_in_linear2"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/s010801_in_my_case"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:background="@drawable/s010801_in_newmycase" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50sp"
+                        android:layout_marginTop="5sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的病历"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35sp"
+                            android:layout_height="35sp"
+                            android:background="@drawable/s010801_in_newrightnext"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_in_linear3"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/s010801_in_my_candy"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:background="@drawable/s010801_in_newmycandy" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50sp"
+                        android:layout_marginTop="5sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的糖豆"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35sp"
+                            android:layout_height="35sp"
+                            android:background="@drawable/s010801_in_newrightnext"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_in_linear4"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/s010801_in_reset_pass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:background="@drawable/s010801_in_newrepass" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50sp"
+                        android:layout_marginTop="5sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="修改密码"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35sp"
+                            android:layout_height="35sp"
+                            android:background="@drawable/s010801_in_newrightnext"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/s010801_in_linear6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s010801_in_linear5"
+                android:layout_marginTop="30sp"
+                android:background="#FFF"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <Button
+                        android:id="@+id/s010801_in_new_exit"
+                        android:layout_width="match_parent"
+                        android:layout_height="45sp"
+                        android:background="#5A9ABD"
+                        android:text="退出当前帐号"
+                        android:textColor="#FFF"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

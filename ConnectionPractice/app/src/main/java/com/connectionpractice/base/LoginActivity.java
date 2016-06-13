@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by 彪 on 2016/5/28.
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
+public class LoginActivity extends BaseTabActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
 
     private EditText mEtAccount;
     private EditText mEtPassword;
@@ -37,6 +37,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+//        setRunningActivity(ACTIVITY_ACTB);
         init();
     }
 
@@ -57,18 +58,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 String password = mEtPassword.getText().toString();
                 password = Md5Tool.getMD5(password);
                 SI001ApiTask myTask = new SI001ApiTask(LoginActivity.this, BasicConfig.API_ID_SI001);
-
-                //List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
                 List<NameValuePair> nameValuePair = myTask.getNameValuePair();
                 nameValuePair.add(new BasicNameValuePair("name", account));
                 nameValuePair.add(new BasicNameValuePair("pass", password));
                 myTask.execute();
+
                 getLoadingDialog().show();
                 break;
             case R.id.register_bn:
                 Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
                 startActivity(intent);
                 break;
+
         }
     }
 
@@ -87,8 +88,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     account = response.optString("name");
                     password = response.optString("pass");
                     saveUserInfo(response);
-                    Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                    );
                 }
                 break;
             }

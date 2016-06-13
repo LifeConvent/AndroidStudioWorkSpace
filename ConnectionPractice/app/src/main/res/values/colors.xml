@@ -3,4 +3,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="appBlue">#1d2088</color>
+    <color name="appYellow">#7f4f21</color>
+    <color name="appGrey">#898989</color>
+    <color name="appOrange">#e54b0b</color>
+    <color name="appBorderColor">#009edd</color>
+    <color name="appTextBlueColor">#192E72</color>
+    <color name="appLightBlue">#009fda</color>
+    <color name="appGreen">#0f9280</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="s010801_in_ed_sexbutton">#5A9ABD</color>
+    <color name="s010801_in_ed_sextext">#989898</color>
+    <color name="s010801_in_ed_sexback">#ECECEC</color>
 </resources>

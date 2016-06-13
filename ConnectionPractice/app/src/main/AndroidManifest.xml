@@ -20,9 +20,13 @@
         <activity android:name=".base.SignupActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".base.BaseActivity">
+        <activity android:name=".base.TempaActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".base.MenuActivity"
+        <activity android:name=".base.HomeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".base.UserInfoEdit"
             android:screenOrientation="portrait">
         </activity>
     </application>
