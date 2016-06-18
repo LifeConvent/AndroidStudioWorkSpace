@@ -175,7 +175,6 @@ public class HomeActivity extends BaseTabActivity implements BaseApiTask.OnTaskC
         account = UserInfo.getInstance().getmStrUserName();
         //setText需要在初始化之后
 
-
         mRlMyInfoHead = (RelativeLayout) findViewById(R.id.s010801_in_my_info);
         mRlMyInfoHead.setOnClickListener(mAclLocalclicklistener);
         mRlMySysInform = (RelativeLayout) findViewById(R.id.s010801_in_sys_inform);

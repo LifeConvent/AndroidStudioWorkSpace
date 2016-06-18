@@ -23,5 +23,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
-    compile files('E:/AndroidStudioWorkSpace/ConnectionPractice/lib/org.apache.http.legacy.jar')
+    compile files('/Users/lawrance/AndroidStudioProjects/AndroidGit/ConnectionPractice/lib/org.apache.http.legacy.jar')
 }

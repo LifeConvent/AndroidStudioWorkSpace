@@ -7,7 +7,7 @@
     <string name="register_err_account_2">密码应由数字、字母、下划线组成</string>
     <string name="server_err_not_exist">用户不存在</string>
     <string name="server_err_exist">用户已存在</string>
-    <string name="server_err_old_wrong">密码错误</string>
+    <string name="server_err_old_wrong">原密码错误</string>
 
     <string name="s010801_in_head_title">我的</string>
     <string name="s010801_in_head_account">账户名</string>

@@ -62,6 +62,10 @@ public class BaseActivity extends Activity {
                 showMessageByResourceId(null, R.string.server_err_old_wrong);
                 getLoadingDialog().dismiss();
                 break;
+            case "ACCOUNT_ERROR":
+                showMessageByResourceId(null, R.string.server_err_not_exist);
+                getLoadingDialog().dismiss();
+                break;
         }
     }
 }

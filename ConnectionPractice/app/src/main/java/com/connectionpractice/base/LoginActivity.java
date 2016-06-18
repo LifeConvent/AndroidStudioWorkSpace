@@ -85,7 +85,7 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
                 if (response.optString("result").equals("error")) {
                     showReturnServer(response.optString("message"));
                 }else {
-                    account = response.optString("name");
+                    account = mEtAccount.getText().toString();
                     password = response.optString("pass");
                     saveUserInfo(response);
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
