@@ -77,6 +77,7 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
     public void onTaskFinish(ApiStatus api_status, int id, JSONObject response) {
         if (response==null) {
             getLoadingDialog().dismiss();
+            showMessageByString(null,"请确认连接网络后再试!");
             return;
         }
         getLoadingDialog().dismiss();

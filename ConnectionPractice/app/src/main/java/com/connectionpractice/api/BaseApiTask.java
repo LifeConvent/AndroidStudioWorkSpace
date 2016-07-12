@@ -60,11 +60,16 @@ public class BaseApiTask extends AsyncTask<Void, Void, Integer> {
             ApiStatus api_status = new ApiStatus();
             api_status.status = status;
             try {
-                jsonObj = new JSONObject(result);
+                if(result!=null) {
+                    jsonObj = new JSONObject(result);
+                    jsonObj = decodeAES(jsonObj);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            jsonObj = decodeAES(jsonObj);
+            if(result==null){
+                jsonObj=null;
+            }
             listener.onTaskFinish(api_status, id, jsonObj);
         }
     }
