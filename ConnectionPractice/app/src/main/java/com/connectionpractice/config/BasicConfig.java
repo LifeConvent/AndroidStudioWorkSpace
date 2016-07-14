@@ -18,6 +18,10 @@ public class BasicConfig {
     public static String URL_PESETPASS = HTTP_ROOT + PATH_TO_API + ENTRY_NAME + NAME_RP ;
     public static String URL_GETCITYINFO = HTTP_ROOT + PATH_TO_API + ENTRY_NAME + NAME_GC ;
 
+    //拷贝来,需要更改
+    public static String UPDATE_URL = "http://221.238.232.136/version.php";
+    public static String PICTURE_TEMP_DIR = "myImg";
+
     public static final int API_ID_SI001 = 1;
     public static final int API_ID_SU001 = 2;
     public static final int API_ID_RP001 = 3;
