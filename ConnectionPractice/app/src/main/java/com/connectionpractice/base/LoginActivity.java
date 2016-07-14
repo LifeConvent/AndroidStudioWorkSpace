@@ -37,8 +37,6 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        setRunningActivity(ACTIVITY_ACTB);
-        //qufen
         init();
     }
 
