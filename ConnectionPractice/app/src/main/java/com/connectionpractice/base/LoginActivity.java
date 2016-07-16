@@ -103,7 +103,7 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
     }
 
     private void saveUserInfo(JSONObject ob) {
-        UserInfo.getInstance().setmStrUserName(account);
-        UserInfo.getInstance().setmStrUserPassword(password);
+        UserInfo.getInstance().setUserAccount(account);
+        UserInfo.getInstance().setUserPassword(password);
     }
 }

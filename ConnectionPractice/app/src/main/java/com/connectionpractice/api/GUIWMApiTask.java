@@ -5,14 +5,13 @@ import com.connectionpractice.config.BasicConfig;
 import org.json.JSONObject;
 
 /**
- * Created by 彪 on 2016/5/28.
+ * Created by lawrance on 16/7/16.
  */
-public class SU001ApiTask extends BaseApiTask{
-    public SU001ApiTask(OnTaskCompleted listener, int id) {
+public class GUIWMApiTask extends BaseApiTask{
+    public GUIWMApiTask(OnTaskCompleted listener, int id) {
         super(listener, id);
-        setUrl(BasicConfig.URL_SETUSERINFO);
+        setUrl(BasicConfig.URL_GETUSERINFO);
     }
-
     @Override
     public JSONObject decodeAES(JSONObject ob) {
         return ob;

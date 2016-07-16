@@ -6,10 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,7 +23,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -82,7 +79,7 @@ public class HomeActivity extends BaseTabActivity implements BaseApiTask.OnTaskC
                      *
                      * */
                     Intent intent = new Intent();
-                    intent.setClass(HomeActivity.this, UserInfoEdit.class);
+                    intent.setClass(HomeActivity.this, UserInfoEditActivity.class);
                     //intent.setClass(HomeActivity.this, MyDetailActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -98,6 +95,15 @@ public class HomeActivity extends BaseTabActivity implements BaseApiTask.OnTaskC
                      * 跳转系统通知界面，并进行post获取
                      *
                      * */
+                    intent = new Intent();
+                    intent.setClass(HomeActivity.this, MyDetailActivity.class);
+                    //intent.setClass(HomeActivity.this, MyDetailActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    overridePendingTransition(
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                    );
                     break;
                 case R.id.s010801_in_my_case:
                     showMessageByString(null, "我的病历");
@@ -172,7 +178,7 @@ public class HomeActivity extends BaseTabActivity implements BaseApiTask.OnTaskC
     }
 
     private void initViews() {
-        account = UserInfo.getInstance().getmStrUserName();
+        account = UserInfo.getInstance().getUserAccount();
         //setText需要在初始化之后
 
         mRlMyInfoHead = (RelativeLayout) findViewById(R.id.s010801_in_my_info);
@@ -291,6 +297,8 @@ public class HomeActivity extends BaseTabActivity implements BaseApiTask.OnTaskC
                 }
         }
     }
+
+
 
     protected void onResume() {
         super.onResume();

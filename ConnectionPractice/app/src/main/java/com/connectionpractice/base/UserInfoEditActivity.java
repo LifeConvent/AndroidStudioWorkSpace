@@ -20,9 +20,7 @@ import com.connectionpractice.R;
 import com.connectionpractice.api.ApiStatus;
 import com.connectionpractice.api.BaseApiTask;
 import com.connectionpractice.api.GetCityInfoApiTask;
-import com.connectionpractice.api.SI001ApiTask;
 import com.connectionpractice.config.BasicConfig;
-import com.connectionpractice.tool.UserInfo;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -34,7 +32,7 @@ import java.util.List;
 /**
  * Created by 彪 on 2016/6/4.
  */
-public class UserInfoEdit extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
+public class UserInfoEditActivity extends BaseActivity implements View.OnClickListener, BaseApiTask.OnTaskCompleted {
 
     private String timeYear;
     private String timeMonth;
@@ -134,7 +132,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 mBtMan.setBackground(getResources().getDrawable(R.drawable.s010801_in_edit_sex_newbuttonstyle));
                 break;
             case R.id.s010801_in_ed_back:
-                Intent intent = new Intent(UserInfoEdit.this, HomeActivity.class);
+                Intent intent = new Intent(UserInfoEditActivity.this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 overridePendingTransition(
@@ -149,7 +147,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.s010801_in_ed_bt_year:
                 //年份list选择
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initTimeYearMakViews(mMskDialog, mBtBirthdayYear);
@@ -157,7 +155,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.s010801_in_ed_bt_month:
                 //年份list选择
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initTimeMonthMakViews(mMskDialog, mBtBirthdayMonth);
@@ -165,7 +163,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.s010801_in_ed_bt_definite_year:
                 //年份list选择
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initTimeYearMakViews(mMskDialog, mBtDefiniteYear);
@@ -173,7 +171,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.s010801_in_ed_bt_definite_month:
                 //年份list选择
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initTimeMonthMakViews(mMskDialog, mBtDefiniteMonth);
@@ -181,14 +179,14 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.s010801_in_ed_bt_province:
                 //省份list选择
-                GetCityInfoApiTask myTask = new GetCityInfoApiTask(UserInfoEdit.this, BasicConfig.API_ID_GC000);
+                GetCityInfoApiTask myTask = new GetCityInfoApiTask(UserInfoEditActivity.this, BasicConfig.API_ID_GC000);
                 List<NameValuePair> nameValuePair = myTask.getNameValuePair();
                 nameValuePair.add(new BasicNameValuePair("type", "province"));
                 nameValuePair.add(new BasicNameValuePair("num", "0"));
                 myTask.execute();
                 getLoadingDialog().show();
 
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initProvinceMakViews(mMskDialog, mBtCityProvince);
@@ -199,7 +197,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 if (mStrProvinceposition == null || mStrProvinceposition.equals("") || mStrProvinceposition.equals("0")) {
                     return;
                 }
-                GetCityInfoApiTask myTask1 = new GetCityInfoApiTask(UserInfoEdit.this, BasicConfig.API_ID_GC001);
+                GetCityInfoApiTask myTask1 = new GetCityInfoApiTask(UserInfoEditActivity.this, BasicConfig.API_ID_GC001);
                 List<NameValuePair> nameValuePair1 = myTask1.getNameValuePair();
                 nameValuePair1.add(new BasicNameValuePair("type", "city"));
                 nameValuePair1.add(new BasicNameValuePair("num", "1"));
@@ -208,7 +206,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 getLoadingDialog().show();
                 //cityProvince
 
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initCityMakViews(mMskDialog, mBtCity);
@@ -219,7 +217,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 if (mStrCityposition == null || mStrCityposition.equals("") || mStrCityposition.equals("0")) {
                     return;
                 }
-                GetCityInfoApiTask myTask2 = new GetCityInfoApiTask(UserInfoEdit.this, BasicConfig.API_ID_GC002);
+                GetCityInfoApiTask myTask2 = new GetCityInfoApiTask(UserInfoEditActivity.this, BasicConfig.API_ID_GC002);
                 List<NameValuePair> nameValuePair2 = myTask2.getNameValuePair();
                 nameValuePair2.add(new BasicNameValuePair("type", "town"));
                 nameValuePair2.add(new BasicNameValuePair("num", "2"));
@@ -229,7 +227,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 getLoadingDialog().show();
                 //cityProvince
 
-                mMskDialog = new Dialog(UserInfoEdit.this, R.style.MaskDialog);
+                mMskDialog = new Dialog(UserInfoEditActivity.this, R.style.MaskDialog);
                 mMskDialog.setCanceledOnTouchOutside(false);
                 mMskDialog.setContentView(R.layout.s010801_in_ed_year_newlistview);
                 initTownMakViews(mMskDialog, mBtTwon);
@@ -259,7 +257,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
 
     private void initCityMakViews(Dialog v, final Button button) {
         mLvListAll = (ListView) v.findViewById(R.id.s010801_in_ed_year_list);
-        ListAdapter adapter = new ListAdapter(UserInfoEdit.this, R.layout.s010801_in_ed_list_item, mAlCity);
+        ListAdapter adapter = new ListAdapter(UserInfoEditActivity.this, R.layout.s010801_in_ed_list_item, mAlCity);
         mLvListAll.setAdapter(adapter);
         mLvListAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -276,7 +274,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
 
     private void initTownMakViews(Dialog v, final Button button) {
         mLvListAll = (ListView) v.findViewById(R.id.s010801_in_ed_year_list);
-        ListAdapter adapter = new ListAdapter(UserInfoEdit.this, R.layout.s010801_in_ed_list_item, mAlTown);
+        ListAdapter adapter = new ListAdapter(UserInfoEditActivity.this, R.layout.s010801_in_ed_list_item, mAlTown);
         mLvListAll.setAdapter(adapter);
         mLvListAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -292,7 +290,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
 
     private void initProvinceMakViews(Dialog v, final Button button) {
         mLvListAll = (ListView) v.findViewById(R.id.s010801_in_ed_year_list);
-        ListAdapter adapter = new ListAdapter(UserInfoEdit.this, R.layout.s010801_in_ed_list_item, mAlProvince);
+        ListAdapter adapter = new ListAdapter(UserInfoEditActivity.this, R.layout.s010801_in_ed_list_item, mAlProvince);
         mLvListAll.setAdapter(adapter);
         mLvListAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -335,7 +333,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
         for (int i = year; i >= 1900; i--) {
             mAlArrayAll.add(String.valueOf(i));
         }
-        ListAdapter adapter = new ListAdapter(UserInfoEdit.this, R.layout.s010801_in_ed_list_item, mAlArrayAll);
+        ListAdapter adapter = new ListAdapter(UserInfoEditActivity.this, R.layout.s010801_in_ed_list_item, mAlArrayAll);
         mLvListAll.setAdapter(adapter);
         mLvListAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -357,7 +355,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
         for (int i = 1; i <= 12; i++) {
             mAlArrayAll.add(String.valueOf(i));
         }
-        ListAdapter adapter = new ListAdapter(UserInfoEdit.this, R.layout.s010801_in_ed_list_item, mAlArrayAll);
+        ListAdapter adapter = new ListAdapter(UserInfoEditActivity.this, R.layout.s010801_in_ed_list_item, mAlArrayAll);
         mLvListAll.setAdapter(adapter);
         mLvListAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -381,7 +379,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
             case BasicConfig.API_ID_RS001: {
                 mMskDialog.dismiss();
                 mMskDialog = null;
-                Intent intent = new Intent(UserInfoEdit.this, HomeActivity.class);
+                Intent intent = new Intent(UserInfoEditActivity.this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 overridePendingTransition(
@@ -434,6 +432,7 @@ public class UserInfoEdit extends BaseActivity implements View.OnClickListener, 
                 break;
         }
     }
+
 
     private void setUserInfo() {
         getLoadingDialog().show();
