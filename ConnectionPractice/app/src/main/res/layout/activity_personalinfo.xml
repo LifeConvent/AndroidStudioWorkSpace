@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/pinfo_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="#009CD9"
+        android:text="个人信息"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15sp"
+            android:layout_marginStart="15sp">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/logo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:textSize="18sp"
+                android:textColor="#66CBFF"
+                android:text="点击设置头像"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="45sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="昵称："/>
+                <TextView android:id="@+id/pinfo_nickname_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="未设置"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="账号："/>
+                <TextView android:id="@+id/pinfo_account_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="未设置"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/pinfo_sex_rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/pinfo_relativilayout_selector">
+
+        <TextView android:id="@+id/pinfo_sex_ex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15sp"
+            android:layout_marginStart="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="性别"
+            android:focusable="false"
+            android:clickable="false"/>
+        <TextView android:id="@+id/pinfo_sex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15sp"
+            android:layout_marginEnd="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="未设置"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginEnd="15sp"
+        android:background="#E1E2E2"/>
+    <RelativeLayout android:id="@+id/pinfo_age_rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@drawable/pinfo_relativilayout_selector">
+
+        <TextView android:id="@+id/pinfo_age_ex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15sp"
+            android:layout_marginStart="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="年龄"
+            android:focusable="false"
+            android:clickable="false"/>
+        <TextView android:id="@+id/pinfo_age_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15sp"
+            android:layout_marginEnd="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="未设置"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginEnd="15sp"
+        android:background="#E1E2E2"/>
+    <RelativeLayout android:id="@+id/pinfo_address_rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@drawable/pinfo_relativilayout_selector">
+
+        <TextView android:id="@+id/pinfo_address_ex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15sp"
+            android:layout_marginStart="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily=""
+            android:text="地址"
+            android:focusable="false"
+            android:clickable="false"/>
+        <TextView android:id="@+id/pinfo_address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15sp"
+            android:layout_marginEnd="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="未设置"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+</LinearLayout>

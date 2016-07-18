@@ -66,7 +66,9 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
                 getLoadingDialog().show();
                 break;
             case R.id.register_bn:
-                Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+//                Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+//                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this,PInfo_Activity_w.class);
                 startActivity(intent);
                 break;
 

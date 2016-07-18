@@ -76,6 +76,8 @@
 
     <drawable name="clr_normal">#b18badde</drawable>
     <drawable name="clr_pressed">#bab5b1</drawable>
+    <drawable name="rlayout_normal">#ffffff</drawable>
+    <drawable name="rlayout_pressd">#66CBFF</drawable>
 
     <string name="tab_record">记录</string>
     <string name="tab_acta">绑定</string>
