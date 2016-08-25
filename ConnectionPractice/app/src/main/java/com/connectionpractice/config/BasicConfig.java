@@ -5,7 +5,7 @@ package com.connectionpractice.config;
  */
 public class BasicConfig {
     //    public static String HTTP_ROOT = "http://192.168.1.103/";
-    public static String HTTP_ROOT = "http://42.122.65.148:9000/";
+    public static String HTTP_ROOT = "http://123.174.129.73:9000/";
     public static String PATH_TO_API = "AndroidPHP/";
     public static String ENTRY_NAME = "index.php?";
     public static String NAME_SI = "id=SI001";

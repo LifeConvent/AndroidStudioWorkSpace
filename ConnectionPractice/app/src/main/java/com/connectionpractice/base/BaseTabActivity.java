@@ -49,23 +49,6 @@ public class BaseTabActivity extends BaseActivity implements View.OnClickListene
 
                 mLlActiona.setOnClickListener(this);
                 mLlActionb.setOnClickListener(this);
-
-//                if (UserInfo.getInstance().getInfotype()==Integer.valueOf(BasicConstant.API_RESPONSE_INFOTYPE_ANO)) {
-//                    mLlMe.setVisibility(View.GONE);
-//                    mLlRecord.setVisibility(View.GONE);
-//                } else if(UserInfo.getInstance().getInfotype()==Integer.valueOf(BasicConstant.API_RESPONSE_INFOTYPE_DOCTOR)) {
-//                    mLlRecord.setVisibility(View.GONE);
-//                } else if(UserInfo.getInstance().getInfotype()==Integer.valueOf(BasicConstant.API_RESPONSE_INFOTYPE_PATIENT)) {
-//                    //for patient
-//                    mLlMe.setVisibility(View.VISIBLE);
-//                    mLlRecord.setVisibility(View.VISIBLE);
-//                } else {
-                //设置不可见
-//                    mLlMe.setVisibility(View.GONE);
-//                    mLlRecord.setVisibility(View.GONE);
-//                    mLlActiona.setVisibility(View.GONE);
-//                    mLlActionb.setVisibility(View.GONE);
-//                }
             }
         }
 
@@ -105,6 +88,7 @@ public class BaseTabActivity extends BaseActivity implements View.OnClickListene
 //                        return;
 //                    }
 //                    mRunningActivity = ACTIVITY_ME;
+                    showMessageByString(null,"主页 ");
                     intent.setClass(BaseTabActivity.this, HomeActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);

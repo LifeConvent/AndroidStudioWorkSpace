@@ -5,163 +5,187 @@
     android:layout_width="fill_parent"
     android:layout_height="@dimen/tab_height"
     android:layout_gravity="bottom"
-    android:gravity="bottom"
     android:baselineAligned="false"
-    android:orientation="horizontal" >
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#FF909090" />
 
     <LinearLayout
-        android:id="@+id/tab_record"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/tab_border">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/tab_record"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_border"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
 
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
 
-        <ImageButton
-            android:id="@+id/ti_home"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:button="@null"
-            android:clickable="false"
-            android:layout_weight="4"
-            android:scaleType="centerInside"
-            android:src="@drawable/tab_recordbuttonstyle"
-            android:background="@android:color/transparent" />
+            <ImageButton
+                android:id="@+id/ti_home"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/tab_recordbuttonstyle" />
 
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/tab_record"
-            android:layout_weight="3"
-            android:textSize="@dimen/tab_text_size"
-            android:textColor="@color/appYellow"
-            android:gravity="top" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/tab_acta"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/tab_border">
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2" />
-        <ImageButton
-            android:id="@+id/ib_sort"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:src="@drawable/tab_actabuttonstyle"
-            android:background="@android:color/transparent"
-            android:button="@null"
-            android:clickable="false"
-            android:scaleType="centerInside" />
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/tab_acta"
-            android:layout_weight="3"
-            android:textSize="@dimen/tab_text_size"
-            android:textColor="@color/appYellow"
-            android:gravity="top" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="top"
+                android:text="@string/tab_record"
+                android:textColor="@color/appYellow"
+                android:textSize="@dimen/tab_text_size" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/tab_actb"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/tab_border">
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2" />
-        <ImageButton
-            android:id="@+id/ib_shopping_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:src="@drawable/tab_actbbuttonstyle"
-            android:background="@android:color/transparent"
-            android:button="@null"
-            android:clickable="false"
-            android:scaleType="centerInside" />
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/tab_actb"
-            android:layout_weight="3"
-            android:textSize="@dimen/tab_text_size"
-            android:textColor="@color/appYellow"
-            android:gravity="top" />
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_acta"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_border"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/tab_me"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/tab_border">
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2" />
-        <ImageButton
-            android:id="@+id/ib_me"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:src="@drawable/tab_mebuttonstyle"
-            android:background="@android:color/transparent"
-            android:button="@null"
-            android:clickable="false"
-            android:scaleType="centerInside" />
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/tab_me"
-            android:layout_weight="3"
-            android:textSize="@dimen/tab_text_size"
-            android:textColor="@color/appYellow"
-            android:gravity="top" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <ImageButton
+                android:id="@+id/ib_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/tab_actabuttonstyle" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="top"
+                android:text="@string/tab_acta"
+                android:textColor="@color/appYellow"
+                android:textSize="@dimen/tab_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_actb"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_border"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <ImageButton
+                android:id="@+id/ib_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/tab_actbbuttonstyle" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="top"
+                android:text="@string/tab_actb"
+                android:textColor="@color/appYellow"
+                android:textSize="@dimen/tab_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_me"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_border"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <ImageButton
+                android:id="@+id/ib_me"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/tab_mebuttonstyle" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="top"
+                android:text="@string/tab_me"
+                android:textColor="@color/appYellow"
+                android:textSize="@dimen/tab_text_size" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="appBlue">#1d2088</color>
+    <color name="appBlue">#13afec</color>
     <color name="appYellow">#7f4f21</color>
-    <color name="appGrey">#898989</color>
+    <color name="appGrey">#efefef</color>
     <color name="appOrange">#e54b0b</color>
     <color name="appBorderColor">#009edd</color>
     <color name="appTextBlueColor">#192E72</color>

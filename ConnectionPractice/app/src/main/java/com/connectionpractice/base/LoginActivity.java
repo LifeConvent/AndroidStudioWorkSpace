@@ -88,7 +88,7 @@ public class LoginActivity extends BaseTabActivity implements View.OnClickListen
                     account = mEtAccount.getText().toString();
                     password = response.optString("pass");
                     saveUserInfo(response);
-                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,HP_Activity_g.class);
                     startActivity(intent);
                     overridePendingTransition(
                             android.R.anim.fade_in,
