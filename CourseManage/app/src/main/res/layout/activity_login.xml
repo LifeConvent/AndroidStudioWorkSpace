@@ -6,35 +6,66 @@
 
     <LinearLayout
         android:id="@+id/linear0"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60sp">
+        android:layout_marginTop="100sp"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_logo"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="35sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程管理"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear1"
-        android:layout_below="@+id/linear0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linear0"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30sp">
+        android:layout_marginTop="70sp"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/login_username_et"
-            android:layout_width="300sp"
+        <RadioGroup
+            android:layout_width="290sp"
             android:layout_height="wrap_content"
-            android:hint="手机号/邮箱"
-            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-            android:maxLength="20"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/edit_style_login"
-            android:inputType="textEmailAddress"
-            />
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/login_account" />
+
+            <EditText
+                android:id="@+id/login_account_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                android:gravity="center"
+                android:hint="@string/login_account_hint"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:textColor="@drawable/login_text_selector"
+                android:textColorHint="@drawable/login_gray" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/darker_gray" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,18 +74,39 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/linear1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30sp">
+        android:layout_marginTop="30sp"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/login_password_et"
-            android:layout_width="300sp"
-            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-            android:maxLength="20"
+        <RadioGroup
+            android:layout_width="290sp"
             android:layout_height="wrap_content"
-            android:hint="请输入密码"
-            android:background="@drawable/edit_style_login"
-            android:inputType="textPassword"
-            />
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/login_pass" />
+
+            <EditText
+                android:id="@+id/login_pass_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                android:gravity="center"
+                android:hint="@string/login_password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:textColor="@drawable/login_text_selector"
+                android:textColorHint="@drawable/login_gray" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/darker_gray" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,27 +116,51 @@
         android:layout_below="@id/linear2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp">
+
         <Button
             android:id="@+id/login_submit_bn"
-            android:layout_width="130sp"
+            android:layout_width="290sp"
             android:layout_height="wrap_content"
-            android:text="登录"
-            android:textColor="#3c407c"
-            android:background="@drawable/shape"
-            android:textSize="15sp"/>
+            android:background="@drawable/login_bt_selector"
+            android:text="@string/login_loginin"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
 
-        <Space
-            android:layout_width="30sp"
-            android:layout_height="0sp"/>
+    <LinearLayout
+        android:id="@+id/login_linear_fogetpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear3"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/login_register_bn"
-            android:layout_width="130sp"
+            android:id="@+id/login_forgetpass_bn"
+            android:layout_width="290sp"
             android:layout_height="wrap_content"
-            android:text="注册"
-            android:textColor="#3c407c"
-            android:background="@drawable/shape"
-            android:textSize="15sp"/>
+            android:background="@null"
+            android:text="@string/login_forget_pass"
+            android:textColor="@drawable/login_text_selector"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_linear_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/login_signup_bn"
+            android:layout_width="290sp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/login_footer_signup"
+            android:textColor="@drawable/login_text_selector"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </RelativeLayout>

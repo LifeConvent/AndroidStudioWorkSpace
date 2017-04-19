@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <drawable name="login_green">#4BD4BB</drawable>
+    <drawable name="login_gray">#6f7372</drawable>
+    <drawable name="login_white">#FFF</drawable>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="theme_color">#4C4959</color>
+    <color name="white">#FFF</color>
 </resources>
