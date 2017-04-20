@@ -4,167 +4,562 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_login">
 
-    <LinearLayout
-        android:id="@+id/login_linear0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60sp"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/login_login_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageView
+        <LinearLayout
+            android:id="@+id/login_linear0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_logo"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
 
-        <TextView
-            android:textSize="15sp"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35sp"
+                android:layout_marginTop="10sp"
+                android:text="课程管理"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_linear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_linear0"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/login_account" />
+
+                <EditText
+                    android:id="@+id/login_account_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/login_account_hint"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_linear2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_linear1"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10sp"
-            android:layout_marginLeft="35sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/login_pass" />
+
+                <EditText
+                    android:id="@+id/login_pass_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/login_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_linear3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="课程管理"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+            android:layout_below="@id/login_linear2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp">
 
-    <LinearLayout
-        android:id="@+id/login_linear1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_linear0"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60sp"
-        android:orientation="vertical">
-
-        <RadioGroup
-            android:layout_width="290sp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:layout_marginLeft="10sp"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/login_submit_bn"
+                android:layout_width="290sp"
                 android:layout_height="wrap_content"
-                android:button="@null"
-                android:drawableLeft="@drawable/login_account" />
+                android:background="@drawable/login_bt_selector"
+                android:text="@string/login_loginin"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
 
-            <EditText
-                android:id="@+id/login_account_et"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/login_linear_fogetpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_linear3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15sp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_forgetpass_bn"
+                android:layout_width="290sp"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-                android:gravity="center"
-                android:hint="@string/login_account_hint"
-                android:inputType="textEmailAddress"
-                android:maxLength="20"
+                android:text="@string/login_forget_pass"
                 android:textColor="@drawable/login_text_selector"
-                android:textColorHint="@drawable/login_gray" />
-        </RadioGroup>
+                android:textSize="12sp" />
+        </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/darker_gray" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/login_linear2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_linear1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10sp"
-        android:orientation="vertical">
-
-        <RadioGroup
-            android:layout_width="290sp"
+        <LinearLayout
+            android:id="@+id/login_linear_footer"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50sp"
+            android:orientation="vertical">
 
-            <RadioButton
-                android:layout_marginLeft="10sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:drawableLeft="@drawable/login_pass" />
-
-            <EditText
-                android:id="@+id/login_pass_et"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/login_signup_bn"
+                android:layout_width="290sp"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-                android:gravity="center"
-                android:hint="@string/login_password"
-                android:inputType="textPassword"
-                android:maxLength="20"
+                android:text="@string/login_footer_signup"
                 android:textColor="@drawable/login_text_selector"
-                android:textColorHint="@drawable/login_gray" />
-        </RadioGroup>
+                android:textSize="14sp" />
+        </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/darker_gray" />
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/login_linear3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_linear2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30sp">
+    <RelativeLayout
+        android:id="@+id/login_register_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-        <Button
-            android:id="@+id/login_submit_bn"
-            android:layout_width="290sp"
+        <LinearLayout
+            android:id="@+id/register_linear0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_bt_selector"
-            android:text="@string/login_loginin"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-    </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/login_linear_fogetpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_linear3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15sp"
-        android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_logo" />
 
-        <Button
-            android:id="@+id/login_forgetpass_bn"
-            android:layout_width="290sp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35sp"
+                android:layout_marginTop="10sp"
+                android:text="@string/register_account"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linear1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:text="@string/login_forget_pass"
-            android:textColor="@drawable/login_text_selector"
-            android:textSize="12sp" />
-    </LinearLayout>
+            android:layout_below="@+id/register_linear0"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/login_linear_footer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50sp"
-        android:orientation="vertical">
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/login_signup_bn"
-            android:layout_width="290sp"
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/login_account" />
+
+                <EditText
+                    android:id="@+id/register_account_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/login_account_hint"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linear2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:text="@string/login_footer_signup"
-            android:textColor="@drawable/login_text_selector"
-            android:textSize="14sp" />
-    </LinearLayout>
+            android:layout_below="@id/register_linear1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/login_pass" />
+
+                <EditText
+                    android:id="@+id/register_pass_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/login_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linear3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_linear2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/register_sign" />
+
+                <EditText
+                    android:id="@+id/register_pass_sign_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/register_sign"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linear4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_linear3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp">
+
+            <Button
+                android:id="@+id/register_submit_bn"
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_bt_selector"
+                android:text="@string/register_signup"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linear_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50sp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/register_signin_bn"
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/register_footer_signin"
+                android:textColor="@drawable/login_text_selector"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_forgetpass_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35sp"
+                android:layout_marginTop="10sp"
+                android:text="@string/forgetpass_submit"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgetpass_linear0"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/login_account" />
+
+                <EditText
+                    android:id="@+id/forgetpass_account_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/forgetpass_account_hint"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgetpass_linear1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/forgetpass_email" />
+
+                <EditText
+                    android:id="@+id/forgetpass_pass_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/forgetpass_email_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgetpass_linear2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/forgetpass_phone" />
+
+                <EditText
+                    android:id="@+id/forgetpass_sign_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:gravity="center"
+                    android:hint="@string/forgetpass_phone_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textColor="@drawable/login_text_selector"
+                    android:textColorHint="@drawable/login_gray" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgetpass_linear3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp">
+
+            <Button
+                android:id="@+id/forgetpass_submit_bn"
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_bt_selector"
+                android:text="@string/forgetpass_submit"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forgetpass_linear_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50sp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/forgetpass_signin_bn"
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/forgetpass_signin"
+                android:textColor="@drawable/login_text_selector"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

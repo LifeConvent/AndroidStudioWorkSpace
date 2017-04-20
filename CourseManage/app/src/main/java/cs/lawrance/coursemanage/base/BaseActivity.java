@@ -33,7 +33,14 @@ public class BaseActivity extends Activity {
 
     public void showReturnServerMessage(String message) {
         switch (message) {
-            case "":
+            case "POST_NULL":
+                showMessageByString("网络连接错误,请稍候再试!");
+                break;
+            case "ACCOUNT_PASS_WRONG":
+                showMessageByString("用户密码错误!");
+                break;
+            case "ACCOUNT_NOT_EXIST":
+                showMessageByString("该用户不存在!");
                 break;
 
         }

@@ -3,11 +3,11 @@ package cs.lawrance.coursemanage.base;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -21,7 +21,6 @@ import cs.lawrance.coursemanage.api.BaseApiTask;
 import cs.lawrance.coursemanage.api.LoginInApiTask;
 import cs.lawrance.coursemanage.config.BasicConfig;
 import cs.lawrance.coursemanage.tool.Md5Tool;
-import cs.lawrance.coursemanage.tool.PassDES;
 import cs.lawrance.coursemanage.tool.SystemStatusManager;
 import cs.lawrance.coursemanage.tool.UserInfo;
 
@@ -35,9 +34,14 @@ public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCom
     private Button gBtLoginin;
     private Button gBtSignup;
     private Button gBtForgetPass;
+    private Button gBtRegisterToLogin;
+    private Button gBtForgetToLogin;
+
+    private RelativeLayout gRlForgetPass;
+    private RelativeLayout gRlSignUp;
+    private RelativeLayout gRlLoginIn;
 
     private String account;
-    private String pass;
     private String token;
 
     @Override
@@ -70,12 +74,21 @@ public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCom
         gBtLoginin = (Button) findViewById(R.id.login_submit_bn);
         gBtSignup = (Button) findViewById(R.id.login_signup_bn);
         gBtForgetPass = (Button) findViewById(R.id.login_forgetpass_bn);
+        gBtRegisterToLogin = (Button) findViewById(R.id.register_signin_bn);
+        gBtForgetToLogin = (Button) findViewById(R.id.forgetpass_signin_bn);
 
         gEtAccount.setOnClickListener(this);
         gEtPass.setOnClickListener(this);
         gBtLoginin.setOnClickListener(this);
         gBtSignup.setOnClickListener(this);
         gBtForgetPass.setOnClickListener(this);
+        gBtRegisterToLogin.setOnClickListener(this);
+        gBtForgetToLogin.setOnClickListener(this);
+
+
+        gRlForgetPass = (RelativeLayout) findViewById(R.id.login_forgetpass_demo);
+        gRlSignUp = (RelativeLayout) findViewById(R.id.login_register_demo);
+        gRlLoginIn = (RelativeLayout) findViewById(R.id.login_login_demo);
     }
 
     @Override
@@ -113,7 +126,7 @@ public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCom
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_submit_bn:
-                String account = gEtAccount.getText().toString();
+                account = gEtAccount.getText().toString();
                 String pass = gEtPass.getText().toString();
                 pass = Md5Tool.getMD5(pass);
                 LoginInApiTask loginTask = new LoginInApiTask(BasicConfig.API_ID_SIGNIN, LoginActivity.this);
@@ -126,8 +139,20 @@ public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCom
                 getLoadingDialog().show();
                 break;
             case R.id.login_signup_bn:
+                gRlForgetPass.setVisibility(View.GONE);
+                gRlLoginIn.setVisibility(View.GONE);
+                gRlSignUp.setVisibility(View.VISIBLE);
                 break;
             case R.id.login_forgetpass_bn:
+                gRlForgetPass.setVisibility(View.VISIBLE);
+                gRlLoginIn.setVisibility(View.GONE);
+                gRlSignUp.setVisibility(View.GONE);
+                break;
+            case R.id.forgetpass_signin_bn:
+            case R.id.register_signin_bn:
+                gRlForgetPass.setVisibility(View.GONE);
+                gRlLoginIn.setVisibility(View.VISIBLE);
+                gRlSignUp.setVisibility(View.GONE);
                 break;
         }
     }
