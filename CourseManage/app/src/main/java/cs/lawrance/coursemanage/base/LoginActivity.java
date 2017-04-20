@@ -1,27 +1,51 @@
 package cs.lawrance.coursemanage.base;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import cs.lawrance.coursemanage.R;
 import cs.lawrance.coursemanage.api.ApiStatus;
 import cs.lawrance.coursemanage.api.BaseApiTask;
+import cs.lawrance.coursemanage.api.LoginInApiTask;
+import cs.lawrance.coursemanage.config.BasicConfig;
+import cs.lawrance.coursemanage.tool.Md5Tool;
+import cs.lawrance.coursemanage.tool.PassDES;
 import cs.lawrance.coursemanage.tool.SystemStatusManager;
+import cs.lawrance.coursemanage.tool.UserInfo;
 
 /**
  * Created by lawrance on 2017/4/18.
  */
 public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCompleted, View.OnClickListener {
 
+    private EditText gEtAccount;
+    private EditText gEtPass;
+    private Button gBtLoginin;
+    private Button gBtSignup;
+    private Button gBtForgetPass;
+
+    private String account;
+    private String pass;
+    private String token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTranslucentStatus();
         setContentView(R.layout.activity_login);
+        initView();
     }
 
     private void setTranslucentStatus() {
@@ -41,19 +65,75 @@ public class LoginActivity extends BaseActivity implements BaseApiTask.OnTaskCom
     }
 
     public void initView() {
+        gEtAccount = (EditText) findViewById(R.id.login_account_et);
+        gEtPass = (EditText) findViewById(R.id.login_pass_et);
+        gBtLoginin = (Button) findViewById(R.id.login_submit_bn);
+        gBtSignup = (Button) findViewById(R.id.login_signup_bn);
+        gBtForgetPass = (Button) findViewById(R.id.login_forgetpass_bn);
 
+        gEtAccount.setOnClickListener(this);
+        gEtPass.setOnClickListener(this);
+        gBtLoginin.setOnClickListener(this);
+        gBtSignup.setOnClickListener(this);
+        gBtForgetPass.setOnClickListener(this);
     }
 
     @Override
     public void onTaskFinish(ApiStatus status, int id, JSONObject response) {
-
+        getLoadingDialog().dismiss();
+        if (response == null) {
+            showMessageByResourceId(R.string.login_internet_no);
+            return;
+        }
+        switch (id) {
+            case BasicConfig.API_ID_SIGNIN: {
+                if (response.optString("status").equals("error")) {
+                    //根据id返回错误提示
+                    showReturnServerMessage(response.optString("message"));
+                } else {
+                    token = response.optString("token");
+                    //拿到token解析用户名
+                    saveUserInfo(account, token);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                    );
+                    finish();
+                }
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_submit_bn:
+                String account = gEtAccount.getText().toString();
+                String pass = gEtPass.getText().toString();
+                pass = Md5Tool.getMD5(pass);
+                LoginInApiTask loginTask = new LoginInApiTask(BasicConfig.API_ID_SIGNIN, LoginActivity.this);
+                List<NameValuePair> loginNameValuePair = loginTask.getNameValuePair();
+                loginNameValuePair.add(new BasicNameValuePair("account", account));
+                loginNameValuePair.add(new BasicNameValuePair("pass", pass));
+                //用户名密码组合加密方式
+                loginTask.execute();
+                //显示加载框
+                getLoadingDialog().show();
+                break;
+            case R.id.login_signup_bn:
+                break;
+            case R.id.login_forgetpass_bn:
                 break;
         }
+    }
+
+    private void saveUserInfo(String account, String token) {
+        UserInfo.getInstance().setUserAccount(account);
+        UserInfo.getInstance().setUserToken(token);
     }
 }

@@ -2,7 +2,8 @@
     <string name="app_name">CourseManage</string>
     <string name="login_footer_signup">还没有账号? 现在创建!</string>
     <string name="login_loginin">登  录</string>
-    <string name="login_forget_pass">忘记密码? 现在找回!</string>
+    <string name="login_forget_pass">忘记密码? 点击找回!</string>
     <string name="login_password">密码</string>
     <string name="login_account_hint">用户名/手机号/邮箱</string>
+    <string name="login_internet_no">请确认连接网络后再试!</string>
 </resources>
